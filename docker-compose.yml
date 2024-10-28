@@ -1,0 +1,28 @@
+services:
+    web:
+        container_name: web
+        build: .
+        depends_on:
+            - db
+        networks:
+            - web_manager
+        ports:
+          - 8000:8000
+
+    db:
+        container_name: postgres-db
+        image: postgres
+        volumes:
+          - db_data:/var/lib/postgresql/data
+        env_file:
+          - .env
+        ports:
+          - $PGADMIN_PORT:5432
+        networks:
+          - web_manager
+
+networks:
+    web_manager:
+
+volumes:
+    db_data:
