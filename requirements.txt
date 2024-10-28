@@ -1,5 +1,5 @@
-environs
-django
-djangorestframework
-psycopg2-binary
-gunicorn
+environs==11.0.0
+django==5.1.2
+djangorestframework==3.15.2
+psycopg2-binary==2.9.10
+gunicorn==23.0.0
